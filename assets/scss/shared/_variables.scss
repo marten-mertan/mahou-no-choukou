@@ -1,0 +1,27 @@
+/* Breakpoints: From xs to sm, from sm to md, from md to lg, after that simple desktop */
+$breakpoints: (
+    xs: 0,
+    sm: 768px,
+    md: 992px,
+    lg: 1280px
+);
+
+/* Colors */
+$black: #000;
+$white: #fff;
+$blue: #1fa3de;
+$violet: #aa41df;
+
+/* Defaults */
+$font-family: 'Montserrat', sans-serif;
+$font-size: 16px;
+$body-color: #000;
+$body-bg: #fff;
+
+/* Grid */
+$header-h: 64px;
+$header-h-m: 32px;
+$footer-h: 32px;
+
+/* Spacing */
+$mobile-padding: 16px;
