@@ -39,12 +39,13 @@ export default {
 			}
 		},
 		checkFieldStatus() {
-			// Добавить проверку крайних значений ячеек
 			for(let i=0; i < this.game.field.height_c; i++) {
 				for( let j=0; j < this.game.field.width_c; j++) {
 					const currentOffset = this.game.field.items[i*this.game.field.height_c + j].offset;
 					const valueRight = this.game.field.items[i*this.game.field.height_c + j].value[(5 - currentOffset%4)%4];
 					const valueBottom = this.game.field.items[i*this.game.field.height_c + j].value[(6 - currentOffset%4)%4];
+					const valueTop = this.game.field.items[i*this.game.field.height_c + j].value[(4 - currentOffset%4)%4];
+					const valueLeft = this.game.field.items[i*this.game.field.height_c + j].value[(7 - currentOffset%4)%4];
 					const neighbourRight = (j !== this.game.field.width_c - 1) ? this.game.field.items[i*this.game.field.height_c + j + 1] : null;
 					const neighbourRightOffset = neighbourRight ? neighbourRight.offset: null;
 					const neighbourRightValue = neighbourRight ? neighbourRight.value[(7 - neighbourRightOffset%4)%4] : null;
@@ -52,7 +53,11 @@ export default {
 					const neighbourBottomOffset = neighbourBottom ? neighbourBottom.offset : null;
 					const neighbourBottomValue = neighbourBottom ? neighbourBottom.value[(4 - neighbourBottomOffset%4)%4] : null;
 					console.log(valueRight, neighbourRightValue, valueBottom, neighbourBottomValue)
-					if (neighbourRight && valueRight !== neighbourRightValue ||
+					if ((j === 0 && valueLeft !== '0') ||
+						(j === this.game.field.width_c - 1 && valueRight !== '0') ||
+						(i === 0 && valueTop !== '0') ||
+						(i === this.game.field.height_c - 1 && valueBottom !== '0') ||
+						neighbourRight && valueRight !== neighbourRightValue ||
 						neighbourBottom && valueBottom !== neighbourBottomValue) {
 						return false;
 					}

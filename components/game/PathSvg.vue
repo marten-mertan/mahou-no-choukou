@@ -1,11 +1,39 @@
 <template>
 	<div class="path-svg">
 		<svg class="path-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-			<ellipse cx="50" cy="50" rx="8" ry="8" fill="currentColor"/>
-			<rect v-if="path[0] === '1'" x="42" y="0" width="16" height="50" fill="currentColor"/>
-			<rect v-if="path[1] === '1'" x="50" y="42" width="50" height="16" fill="currentColor"/>
-			<rect v-if="path[2] === '1'" x="42" y="50" width="16" height="50" fill="currentColor"/>
-			<rect v-if="path[3] === '1'" x="0" y="42" width="50" height="16" fill="currentColor"/>
+			<ellipse cx="50" cy="50" rx="3" ry="3" fill="currentColor"/>
+
+			<g v-if="path[0] === '1'">
+				<rect x="47" y="0" width="6" height="50" fill="currentColor"/>
+				<rect x="32" y="0" width="6" height="14" fill="currentColor"/>
+				<rect x="62" y="0" width="6" height="14" fill="currentColor"/>
+				<rect x="32" y="8" width="36" height="6" fill="currentColor"/>
+				<rect x="32" y="20" width="36" height="6" fill="currentColor"/>
+			</g>
+
+			<g v-if="path[1] === '1'">
+				<rect x="50" y="47" width="50" height="6" fill="currentColor"/>
+				<rect x="86" y="62" width="14" height="6" fill="currentColor"/>
+				<rect x="86" y="32" width="14" height="6" fill="currentColor"/>
+				<rect x="86" y="32" width="6" height="36" fill="currentColor"/>
+				<rect x="74" y="32" width="6" height="36" fill="currentColor"/>
+			</g>
+
+			<g v-if="path[2] === '1'">
+				<rect x="47" y="50" width="6" height="50" fill="currentColor"/>
+				<rect x="32" y="86" width="6" height="14" fill="currentColor"/>
+				<rect x="62" y="86" width="6" height="14" fill="currentColor"/>
+				<rect x="32" y="86" width="36" height="6" fill="currentColor"/>
+				<rect x="32" y="74" width="36" height="6" fill="currentColor"/>
+			</g>
+
+			<g v-if="path[3] === '1'">
+				<rect x="0" y="47" width="50" height="6" fill="currentColor"/>
+				<rect x="0" y="62" width="14" height="6" fill="currentColor"/>
+				<rect x="0" y="32" width="14" height="6" fill="currentColor"/>
+				<rect x="8" y="32" width="6" height="36" fill="currentColor"/>
+				<rect x="20" y="32" width="6" height="36" fill="currentColor"/>
+			</g>
 		</svg>
 	</div>
 </template>
@@ -31,7 +59,7 @@ export default {
   height: 100%;
 
   &-icon {
-    color: white;
+    color: $black;
   }
 }
 </style>
