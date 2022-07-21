@@ -31,7 +31,7 @@ export default {
 
   &__title {
     font-size: 28px;
-    color: $violetDark;
+    color: $purple;
     text-align: center;
   }
 

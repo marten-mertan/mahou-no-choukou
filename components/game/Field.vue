@@ -51,22 +51,6 @@ export default {
   width: max-content;
   margin: 20px auto;
   padding: 20px;
-  user-select: none;
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #a4508b;
-    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
-    border-radius: 20px;
-    opacity: .84;
-    pointer-events: none;
-  }
 
   &-inner {
     position: relative;
@@ -83,9 +67,10 @@ export default {
     color: $white;
     font-size: 10px;
     padding: 12px;
-    border-radius: 25%;
+    border-radius: 20%;
     cursor: pointer;
     user-select: none;
+	border: 1px solid $purple;
     transition: all .22s ease;
   }
 

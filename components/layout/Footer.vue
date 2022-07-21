@@ -33,7 +33,7 @@ export default {
   }
 
   &-link {
-    color: $violet;
+    color: $pink;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 2px;
