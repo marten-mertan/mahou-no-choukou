@@ -3,7 +3,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxi generate",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },

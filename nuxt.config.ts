@@ -11,8 +11,6 @@ export default defineNuxtConfig({
          * Для генерации фавиконок - https://realfavicongenerator.net/
          */
 
-        target: 'static',
-        ssr: false,
         baseURL: '/mahou-no-choukou/',
         buildAssetsDir: '/n/',
         head: {
