@@ -11,7 +11,7 @@ export default defineNuxtConfig({
          */
 
         baseURL: '/mahou-no-choukou/',
-        buildAssetsDir: '/n/',
+        buildAssetsDir: '/assets/',
         head: {
             htmlAttrs: {
                 lang: 'en',
