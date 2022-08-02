@@ -85,7 +85,7 @@ export default {
 	bottom: 0;
 	width: 100%;
 	height: 100%;
-	background: url('img/light.png') 50% 50% no-repeat;
+	background: url('/img/light.png') 50% 50% no-repeat;
 	background-size: cover;
     transform: translateY(-100%);
 	transition: all .8s ease-out .3s;
