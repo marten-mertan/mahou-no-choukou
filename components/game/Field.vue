@@ -22,7 +22,7 @@
 				@click="changeItemOffset(item.index, 1)"
 			>
 				<div class="field-item-inner">
-					<PathSvg
+					<GamePathSvg
 						:path="item.value"
 					/>
 				</div>
@@ -32,13 +32,8 @@
 </template>
 
 <script>
-import PathSvg from '~/components/game/PathSvg.vue';
-
 export default {
 	name: 'Field',
-	components: {
-		PathSvg
-	},
 	props: {
 		field: {
 			type: Object,

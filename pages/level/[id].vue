@@ -1,6 +1,6 @@
 <template>
 	<div class="level container">
-		<Field
+		<GameField
 			:field="game.field"
 			:status="game.status"
 			@changeItemOffset="changeItemOffset"
@@ -14,13 +14,8 @@
 </template>
 
 <script>
-import Field from '~/components/game/Field.vue';
-
 export default {
 	name: 'Level',
-	components: {
-		Field
-	},
 	data: () => {
 		return {
 			game: {
