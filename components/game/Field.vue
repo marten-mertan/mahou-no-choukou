@@ -1,5 +1,7 @@
 <template>
-	<div class="field">
+	<div
+		:class="['field', {'complete': status === 'complete'}]"
+	>
 		<div
 			class="field-inner"
 			:style="{width: field.width+'px', height: field.height+'px'}"
@@ -8,6 +10,7 @@
 			<div
 				v-for="(item, index) in field.items"
 				:key="'field-item-'+index"
+				v-show="item.value !== '0000'"
 				class="field-item"
 				:style="{
 				top: 100 / field.height_c * item.y + '%',
@@ -18,10 +21,11 @@
 			}"
 				@click="changeItemOffset(item.index, 1)"
 			>
-				{{item}}
-				<GamePathSvg
-					:path="item.value"
-				/>
+				<div class="field-item-inner">
+					<GamePathSvg
+						:path="item.value"
+					/>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -34,6 +38,10 @@ export default {
 		field: {
 			type: Object,
 			required: true,
+		},
+		status: {
+			type: String,
+			default: 'loading',
 		},
 	},
 	methods: {
@@ -51,10 +59,40 @@ export default {
   width: max-content;
   margin: 20px auto;
   padding: 20px;
+  overflow: hidden;
+
+  &.complete {
+    &:after {
+      transform: translateY(100%);
+    }
+
+	.field-item {
+      cursor: default;
+
+	  &-inner {
+        animation: fieldComplete .8s .3s;
+	  }
+	}
+  }
+
+  &:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: url('/static/img/light.png') 50% 50% no-repeat;
+	background-size: cover;
+    transform: translateY(-100%);
+	transition: all .8s ease-out .3s;
+  }
 
   &-inner {
     position: relative;
-
   }
 
   &-item {
@@ -65,14 +103,38 @@ export default {
     justify-content: center;
     align-items: center;
     color: $white;
-    font-size: 10px;
-    padding: 12px;
-    border-radius: 20%;
     cursor: pointer;
     user-select: none;
-	border: 1px solid $purple;
     transition: all .22s ease;
+
+    &-inner {
+	  position: relative;
+	  width: 100%;
+	  height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: scale(1);
+      transition: all .22s ease;
+    }
   }
 
+  @keyframes fieldComplete {
+    0% {
+      transform: scale(1);
+    }
+
+	50% {
+      transform: scale(.9);
+	}
+
+    75% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
 }
 </style>

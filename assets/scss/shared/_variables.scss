@@ -1,9 +1,10 @@
-/* Breakpoints: From xs to sm, from sm to md, from md to lg, after that simple desktop */
+/* Breakpoints */
 $breakpoints: (
-    xs: 0,
-    sm: 768px,
-    md: 992px,
-    lg: 1280px
+        mobile: 767px,
+        tablet: 1023px,
+        laptop: 1380px,
+        desktop: 1920px,
+        large-desktop: 99999px,
 );
 
 /* Colors */
@@ -26,4 +27,5 @@ $header-h-m: 32px;
 $footer-h: 32px;
 
 /* Spacing */
+$desktop-padding: 24px;
 $mobile-padding: 16px;

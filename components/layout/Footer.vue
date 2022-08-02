@@ -37,7 +37,7 @@ export default {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 2px;
-    margin: 0 6px;
+    margin-left: 6px;
   }
 }
 </style>

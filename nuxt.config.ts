@@ -28,7 +28,7 @@ export default defineNuxtConfig({
                 /* Favicons */
                 {
                     name: 'msapplication-TileColor',
-                    content: '#ffffff'
+                    content: '#302939'
                 },
                 {
                     name: 'theme-color',
@@ -42,7 +42,7 @@ export default defineNuxtConfig({
                 {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/static/favicons/favicon-16x16.png'},
                 {rel: 'apple-touch-icon', sizes: '180x180', href: '/static/favicons/apple-touch-icon.png'},
                 {rel: 'manifest', href: '/static/favicons/site.webmanifest'},
-                {rel: 'mask-icon', href: '/static/favicons/safari-pinned-tab.svg', color: '#5bbad5'},
+                {rel: 'mask-icon', href: '/static/favicons/safari-pinned-tab.svg', color: '#ffd8d8'},
             ],
         },
 
@@ -63,7 +63,7 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: '@import "@/assets/scss/shared/_variables.scss";',
+                    additionalData: '@import "@/assets/scss/shared/_variables.scss"; @import "@/assets/scss/shared/_mixins.scss";',
                 },
             },
         },
