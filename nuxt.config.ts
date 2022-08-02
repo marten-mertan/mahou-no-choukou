@@ -68,6 +68,7 @@ export default defineNuxtConfig({
             },
         },
     },
+
     router: {
         base: '/mahou-no-choukou/'
     }
