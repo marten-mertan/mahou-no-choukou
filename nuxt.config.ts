@@ -2,11 +2,8 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    target: 'server',
-
-    build: {
-        publicPath: '/n/',
-    },
+    target: 'static',
+    ssr: false,
 
     app: {
         /**
@@ -14,7 +11,10 @@ export default defineNuxtConfig({
          * Для генерации фавиконок - https://realfavicongenerator.net/
          */
 
+        target: 'static',
+        ssr: false,
         baseURL: '/mahou-no-choukou/',
+        buildAssetsDir: '/n/',
         head: {
             htmlAttrs: {
                 lang: 'en',
