@@ -2,6 +2,13 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+    target: 'static',
+    ssr: false,
+
+    router: {
+        base: '/mahou-no-choukou/'
+    },
+
     app: {
         /**
          * Метатеги, фавиконки и т.п
@@ -68,10 +75,4 @@ export default defineNuxtConfig({
             },
         },
     },
-
-    target: 'static',
-
-    router: {
-        base: '/mahou-no-choukou/'
-    }
 })
