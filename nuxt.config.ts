@@ -4,10 +4,6 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
     target: 'server',
 
-    router: {
-        base: '/<mahou-no-choukou>/'
-    },
-
     build: {
         publicPath: '/n/',
     },
@@ -17,6 +13,8 @@ export default defineNuxtConfig({
          * Метатеги, фавиконки и т.п
          * Для генерации фавиконок - https://realfavicongenerator.net/
          */
+
+        baseURL: '/mahou-no-choukou/',
         head: {
             htmlAttrs: {
                 lang: 'en',
