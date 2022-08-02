@@ -1,12 +1,11 @@
 {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-f82d8b3b.mjs",
+    "file": "entry-eb74a2dc.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
       "pages/index.vue",
       "pages/level/[id].vue",
-      "middleware/gh-pages-dynamic-routes.js",
       "layouts/default.vue"
     ],
     "css": [
@@ -14,7 +13,7 @@
     ]
   },
   "pages/index.vue": {
-    "file": "index-9b300c41.mjs",
+    "file": "index-e7c53d77.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -22,20 +21,15 @@
     ]
   },
   "pages/level/[id].vue": {
-    "file": "_id_-150edb3f.mjs",
+    "file": "_id_-5e4f750c.mjs",
     "src": "pages/level/[id].vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
-  "middleware/gh-pages-dynamic-routes.js": {
-    "file": "gh-pages-dynamic-routes-1b7ed191.mjs",
-    "src": "middleware/gh-pages-dynamic-routes.js",
-    "isDynamicEntry": true
-  },
   "layouts/default.vue": {
-    "file": "default-181125e2.mjs",
+    "file": "default-f673255e.mjs",
     "src": "layouts/default.vue",
     "isDynamicEntry": true,
     "imports": [
