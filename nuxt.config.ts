@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     target: 'server',
 
     router: {
-        base: '/mahou-no-choukou/'
+        base: '/<mahou-no-choukou>/'
     },
 
     build: {
