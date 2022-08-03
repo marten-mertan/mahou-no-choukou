@@ -27,17 +27,17 @@ export default {
     justify-content: flex-end;
     height: $footer-h;
     color: $white;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 300;
-    letter-spacing: 2px;
+    letter-spacing: .2rem;
   }
 
   &-link {
     color: $pink;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 600;
-    letter-spacing: 2px;
-    margin-left: 6px;
+    letter-spacing: .2rem;
+    margin-left: .6rem;
   }
 }
 </style>

@@ -51,10 +51,10 @@ export default {
 
 <style lang="scss" scoped>
 .level-selection {
-  margin: 28px auto;
+  margin: 2.8rem auto;
 
   &__title {
-    font-size: 28px;
+    font-size: 2.8rem;
     color: $purple;
 	text-transform: uppercase;
   }
@@ -62,22 +62,22 @@ export default {
   &-grid {
     display: flex;
 	flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 2rem;
 
     &-item {
-	  margin-right: 8px;
-      margin-bottom: 8px;
+	  margin-right: .8rem;
+      margin-bottom: .8rem;
 
       &-link {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80px;
-        height: 80px;
-        border-radius: 8px;
+        width: 8rem;
+        height: 8rem;
+        border-radius: .8rem;
         color: $grayDark;
-        font-size: 20px;
-		border: 2px solid $grayDark;
+        font-size: 2rem;
+		border: .2rem solid $grayDark;
         opacity: .7;
         transition: all .22s ease-out;
 
@@ -91,12 +91,12 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80px;
-        height: 80px;
-        border-radius: 8px;
+        width: 8rem;
+        height: 8rem;
+        border-radius: .8rem;
         color: $grayDark;
-        font-size: 20px;
-        border: 2px solid $grayDark;
+        font-size: 2rem;
+        border: .2rem solid $grayDark;
         opacity: .7;
 		cursor: pointer;
         transition: all .22s ease-out;

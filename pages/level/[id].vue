@@ -20,8 +20,8 @@ export default {
 		return {
 			game: {
 				field: {
-					width: 600,
-					height: 600,
+					width: 60, //in rem
+					height: 60, //in rem
 					width_c: 4,
 					height_c: 4,
 					items: [],
@@ -136,14 +136,14 @@ export default {
 
 <style lang="scss" scoped>
 .level {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 
   &-next {
 	display: flex;
 	justify-content: center;
-	margin-bottom: 20px;
-    transform: translateY(12px);
+	margin-bottom: 2rem;
+    transform: translateY(1.2rem);
 	opacity: 0;
 	visibility: hidden;
 	transition: all .3s ease-out 1.2s;
@@ -155,11 +155,11 @@ export default {
 	}
 
 	&__link {
-	  padding: 12px 20px;
+	  padding: 1.2rem 2rem;
 	  background: transparent;
 	  color: $pink;
-	  border: 1px solid $pink;
-	  border-radius: 4px;
+	  border: .1rem solid $pink;
+	  border-radius: .4rem;
 	  transition: all .22s ease;
 
 	  &:hover {

@@ -4,7 +4,7 @@
 	>
 		<div
 			class="field-inner"
-			:style="{width: field.width+'px', height: field.height+'px'}"
+			:style="{width: field.width+'rem', height: field.height+'rem'}"
 
 		>
 			<div
@@ -57,8 +57,8 @@ export default {
   position: relative;
   display: flex;
   width: max-content;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 2rem auto;
+  padding: 2rem;
   overflow: hidden;
 
   &.complete {

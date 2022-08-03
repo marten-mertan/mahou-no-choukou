@@ -46,8 +46,8 @@ export default {
     display: flex;
     align-items: center;
     height: $header-h;
-	padding-top: 8px;
-    padding-bottom: 8px;
+	padding-top: .8rem;
+    padding-bottom: .8rem;
 
     @include respond-to(mobile) {
       height: $header-h-m;

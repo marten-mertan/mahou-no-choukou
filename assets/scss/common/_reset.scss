@@ -7,8 +7,22 @@
     box-sizing: border-box;
 }
 
+
 html {
     height: 100%;
+    font-size: .52083333vw;
+
+    @include respond-to(desktop) {
+        font-size: 10px;
+    }
+
+    @include respond-to(laptop) {
+        font-size: .7246376811594vw;
+    }
+
+    @include respond-to(tablet) {
+        font-size: 10px;
+    }
 }
 
 body {
