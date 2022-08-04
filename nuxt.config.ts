@@ -5,13 +5,14 @@ export default defineNuxtConfig({
     target: 'static',
 
     app: {
+        baseURL: '/mahou-no-choukou/',
+        buildAssetsDir: '/n/',
+
         /**
          * Метатеги, фавиконки и т.п
          * Для генерации фавиконок - https://realfavicongenerator.net/
          */
 
-        baseURL: '/mahou-no-choukou/',
-        buildAssetsDir: '/n/',
         head: {
             htmlAttrs: {
                 lang: 'en',
@@ -50,11 +51,11 @@ export default defineNuxtConfig({
                 {rel: 'mask-icon', href: '/mahou-no-choukou/favicons/safari-pinned-tab.svg', color: '#ffd8d8'},
             ],
         },
-
-        /**
-         * Подключаем файл с вендорными стилями и файл с общими стилями
-         */
     },
+
+    /**
+     * Подключаем файл с вендорными стилями и файл с общими стилями
+     */
 
     css: [
         '~/assets/scss/vendors.scss',

@@ -8,7 +8,7 @@
 }
 
 .container {
-    max-width: 136rem;
+    max-width: $container-w;
     margin-left: auto;
     margin-right: auto;
     padding-left: $desktop-padding;

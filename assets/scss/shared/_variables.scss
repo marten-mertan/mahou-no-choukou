@@ -5,6 +5,7 @@ $breakpoints: (
         laptop: 1380px,
         desktop: 1920px,
         large-desktop: 99999px,
+        background: 1800px, // для показа бэкграунда
 );
 
 /* Colors */
@@ -22,6 +23,7 @@ $body-color: #17141b;
 $body-bg: #fff;
 
 /* Grid */
+$container-w: 136rem;
 $header-h: 6.4rem;
 $header-h-m: 3.2rem;
 $footer-h: 3.2rem;

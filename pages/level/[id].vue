@@ -131,6 +131,7 @@ export default {
 	mounted() {
 		this.gameInit();
 	},
+
 };
 </script>
 

@@ -1,18 +1,21 @@
 <template>
 	<div>
-		<LayoutHeader/>
+		<LayoutHeader />
 
 		<main class="main">
 			<slot />
 		</main>
 
-		<LayoutFooter/>
+		<LayoutBackground
+			:animate="true"
+		/>
+
+		<LayoutFooter />
 	</div>
 </template>
 
 <script>
 export default {
-
 };
 </script>
 
@@ -21,7 +24,7 @@ export default {
   padding-top: $header-h;
   min-height: calc(100vh - $footer-h);
 
-  @media screen and (max-width: 767px) {
+  @include respond-to(mobile) {
     padding-top: $header-h-m;
   }
 }
