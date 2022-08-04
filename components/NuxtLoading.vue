@@ -103,10 +103,10 @@ onBeforeUnmount(() => clear);
 <style>
 .nuxt-progress {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    width: 0%;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 0;
     opacity: 1;
     transition: width 0.1s, height 0.4s, opacity 0.4s;
     background: repeating-linear-gradient(
