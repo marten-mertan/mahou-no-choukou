@@ -62,9 +62,13 @@ export default {
   overflow: hidden;
 
   &.complete {
-    &:after {
-      transform: translateY(100%);
-    }
+	.field-inner {
+	  overflow: hidden;
+
+      &:after {
+        transform: translateY(calc(100% + 2rem));
+      }
+	}
 
 	.field-item {
       cursor: default;
@@ -75,24 +79,26 @@ export default {
 	}
   }
 
-  &:after {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	width: 100%;
-	height: 100%;
-	background: url('/img/light.png') 50% 50% no-repeat;
-	background-size: cover;
-    transform: translateY(-100%);
-	transition: all .8s ease-out .3s;
-  }
-
   &-inner {
     position: relative;
+    backdrop-filter: blur(.5rem);
+    -webkit-backdrop-filter: blur(.5rem);
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/img/light.png') 50% 50% no-repeat;
+      background-size: cover;
+      transform: translateY(calc(-100% - 2rem));
+      transition: all .8s ease-out .3s;
+    }
   }
 
   &-item {
@@ -106,6 +112,9 @@ export default {
     cursor: pointer;
     user-select: none;
     transition: all .22s ease;
+    background: rgba($white, 0.2);
+    border-radius: .8rem;
+    box-shadow: 0 .4rem 3rem rgba($black, 0.1);
 
     &-inner {
 	  position: relative;

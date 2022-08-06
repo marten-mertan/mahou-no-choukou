@@ -1,6 +1,7 @@
 <template>
 	<div class="level container">
 		<GameField
+			key="GameField"
 			:field="game.field"
 			:status="game.status"
 			@changeItemOffset="changeItemOffset"
@@ -20,8 +21,8 @@ export default {
 		return {
 			game: {
 				field: {
-					width: 60, //in rem
-					height: 60, //in rem
+					width: 48, //in rem
+					height: 48, //in rem
 					width_c: 4,
 					height_c: 4,
 					items: [],
@@ -137,9 +138,6 @@ export default {
 
 <style lang="scss" scoped>
 .level {
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-
   &-next {
 	display: flex;
 	justify-content: center;
@@ -157,10 +155,11 @@ export default {
 
 	&__link {
 	  padding: 1.2rem 2rem;
-	  background: transparent;
 	  color: $pink;
 	  border: .1rem solid $pink;
 	  border-radius: .4rem;
+      backdrop-filter: blur(.5rem);
+      -webkit-backdrop-filter: blur(.5rem);
 	  transition: all .22s ease;
 
 	  &:hover {

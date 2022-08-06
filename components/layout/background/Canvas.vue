@@ -208,13 +208,13 @@ export default {
 			for(let i = 0; i < this.points.length; i++) {
 				this.movePoint(this.points[i]);
 				// detect points in range
-				if(Math.abs(this.getDistance(this.target, this.points[i])) < 40000) {
+				if(Math.abs(this.getDistance(this.target, this.points[i])) < 4000) {
 					this.points[i].active = 0.3;
 					this.points[i].circle.active = 0.6;
-				} else if(Math.abs(this.getDistance(this.target, this.points[i])) < 200000) {
+				} else if(Math.abs(this.getDistance(this.target, this.points[i])) < 20000) {
 					this.points[i].active = 0.1;
 					this.points[i].circle.active = 0.3;
-				} else if(Math.abs(this.getDistance(this.target, this.points[i])) < 400000) {
+				} else if(Math.abs(this.getDistance(this.target, this.points[i])) < 40000) {
 					this.points[i].active = 0.02;
 					this.points[i].circle.active = 0.1;
 				} else {
