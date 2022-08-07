@@ -21,6 +21,9 @@ export default {
 
 <style lang="scss" scoped>
 .main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   padding-top: $header-h;
   min-height: calc(100vh - $footer-h);
 

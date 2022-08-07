@@ -57,7 +57,7 @@ export default {
   position: relative;
   display: flex;
   width: max-content;
-  margin: 2rem auto;
+  margin: 2rem 0;
   padding: 2rem;
   overflow: hidden;
 

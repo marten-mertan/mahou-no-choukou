@@ -32,6 +32,8 @@ export default {
 				backgroundSpeed: 0.4,
 
 				//points params
+				initPointsPopulationX: 15,
+				initPointsPopulationY: 15,
 				pointsSpeedA: 20,
 				pointsSpeedB: 12,
 				pointsSpeedC: 500,
@@ -50,7 +52,7 @@ export default {
 		setStar(id, x, y) {
 			const r = Math.floor(Math.random() * 2) + 1;
 			const alpha = (Math.floor(Math.random() * 10) + 1) / 10 / 2;
-			const color = 'rgba(255,255,255,' + alpha + ')';
+			const color = 'rgba(152,220,240,' + alpha + ')';
 			return {
 				id: id,
 				x: x,
@@ -94,7 +96,7 @@ export default {
 			this.ctx.beginPath();
 			this.ctx.arc(point.circle.x, point.circle.y, point.circle.r, 0, 2 * Math.PI, false);
 			this.ctx.closePath();
-			this.ctx.fillStyle = 'rgba(156,217,249,'+ point.circle.active+')';
+			this.ctx.fillStyle = 'rgba(152,220,240,'+ point.circle.active+')';
 			this.ctx.fill();
 			this.ctx.shadowBlur = 0;
 		},
@@ -113,7 +115,7 @@ export default {
 				this.ctx.beginPath();
 				this.ctx.moveTo(point.x, point.y);
 				this.ctx.lineTo(point.closest[i].x, point.closest[i].y);
-				this.ctx.strokeStyle = 'rgba(156,217,249,'+ point.active+')';
+				this.ctx.strokeStyle = 'rgba(152,220,240,'+ point.active+')';
 				this.ctx.stroke();
 			}
 		},
@@ -141,10 +143,10 @@ export default {
 
 			//init points
 			let id = 0;
-			for(let x = 0; x < this.width; x = x + this.width/15) {
-				for(let y = 0; y < this.height; y = y + this.height/15) {
-					const px = x + Math.random()*this.width/15;
-					const py = y + Math.random()*this.height/15;
+			for(let i = 0, x = 0; i < this.params.initPointsPopulationX; x = x + this.width/this.params.initPointsPopulationX, i++) {
+				for(let j = 0, y = 0; j < this.params.initPointsPopulationY; y = y + this.height/this.params.initPointsPopulationY, j++) {
+					const px = x + Math.random()*this.width/this.params.initPointsPopulationX;
+					const py = y + Math.random()*this.height/this.params.initPointsPopulationY;
 					const p = {
 						id: id++,
 						x: px,
@@ -237,25 +239,17 @@ export default {
 
 			//init points
 			let id = 0;
-			for(let x = 0; x < this.width; x = x + this.width/15) {
-				for(let y = 0; y < this.height; y = y + this.height/15) {
-					const px = x + Math.random()*this.width/15;
-					const py = y + Math.random()*this.height/15;
-					const p = {
-						id: id++,
-						x: px,
-						originX: px,
-						y: py,
-						originY: py,
-						active: 0,
-						circle: this.setPoint(id, px, py, Math.random()*2+1, 'rgba(255,255,255,0.3)', 0)
-					};
+			for(let i = 0, x = 0; i < this.params.initPointsPopulationX; x = x + this.width/this.params.initPointsPopulationX, i++) {
+				for(let j = 0, y = 0; j < this.params.initPointsPopulationY; y = y + this.height/this.params.initPointsPopulationY, j++) {
+					const px = x + Math.random()*this.width/this.params.initPointsPopulationX;
+					const py = y + Math.random()*this.height/this.params.initPointsPopulationY;
 
 					this.points[id].x = px;
 					this.points[id].originX = px;
 					this.points[id].y = py;
 					this.points[id].originY = py;
 					this.points[id].circle = this.setPoint(id, px, py, Math.random()*2+1, 'rgba(255,255,255,0.3)', 0);
+					id++;
 				}
 			}
 		},

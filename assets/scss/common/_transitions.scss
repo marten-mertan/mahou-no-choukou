@@ -7,3 +7,18 @@
 .fade-leave-active {
     opacity: 0;
 }
+
+.page-enter-active,
+.page-leave-active {
+    transition: transform .8s ease-in-out, opacity .8s  ease-in-out;
+}
+
+.page-leave-to {
+    transform: translate(-20rem);
+    opacity: 0;
+}
+
+.page-enter-from{
+    transform: translate(20rem);
+    opacity: 0;
+}

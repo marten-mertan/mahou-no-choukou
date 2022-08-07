@@ -1,14 +1,19 @@
 <template>
 	<div class="level container">
+		<div class="level-arrow complete">
+			<NuxtLink class="level-arrow__back" to="/" >
+				<div class="level-arrow__label">level selection</div>
+			</NuxtLink>
+		</div>
 		<GameField
 			key="GameField"
 			:field="game.field"
 			:status="game.status"
 			@changeItemOffset="changeItemOffset"
 		/>
-		<div :class="['level-next', {'complete': game.status === 'complete'}]">
-			<NuxtLink class="level-next__link" :to="`/level/${Number($route.params.id) + 1}/`">
-				Next level
+		<div :class="['level-arrow', {'complete': game.status === 'complete'}]">
+			<NuxtLink class="level-arrow__next" :to="`/level/${Number($route.params.id) + 1}/`" >
+				<div class="level-arrow__label">{{ `level ${Number($route.params.id) + 1}` }}</div>
 			</NuxtLink>
 		</div>
 	</div>
@@ -17,6 +22,9 @@
 <script>
 export default {
 	name: 'Level',
+	pageKey() {
+		return `level-page-${this.$route.params.id}`
+	},
 	data: () => {
 		return {
 			game: {
@@ -138,36 +146,184 @@ export default {
 
 <style lang="scss" scoped>
 .level {
-  &-next {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 2rem;
-    transform: translateY(1.2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-arrow {
+	position: relative;
+    display: flex;
+    justify-content: center;
 	opacity: 0;
 	visibility: hidden;
-	transition: all .3s ease-out 1.2s;
+    transform: translateY(1.2rem);
+    transition: all .3s ease-out 1.2s;
 
 	&.complete {
-	  transform: translateY(0);
       opacity: 1;
       visibility: visible;
+      transform: translateY(0);
 	}
 
-	&__link {
-	  padding: 1.2rem 2rem;
-	  color: $pink;
-	  border: .1rem solid $pink;
-	  border-radius: .4rem;
-      backdrop-filter: blur(.5rem);
-      -webkit-backdrop-filter: blur(.5rem);
-	  transition: all .22s ease;
+	&__next {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 5rem;
+      padding-right: 5rem;
+      border-radius: 50%;
+      border: .1rem solid transparent;
+      transform: scale(1, 1);
+      transition: all .4s ease;
 
-	  &:hover {
-        background: $pink;
-        color: $white;
-	  }
+      &:hover {
+        transform: scale(1.1, 1.1);
+
+        &:after {
+          animation: arrowNext1 .6s infinite ease;
+        }
+
+        &:before {
+          animation: arrowNext2 .6s infinite ease;
+        }
+      }
+
+      &:after {
+        opacity: 1;
+        content: '';
+        position: absolute;
+        top: .9rem;
+        right: 1.1rem;
+        width: 0;
+        height: 0;
+        border-top: 1.6rem solid transparent;
+        border-bottom: 1.6rem solid transparent;
+        border-left: 2rem solid $white;
+        transition: all .22s ease;
+      }
+
+      &:before {
+        opacity: 0;
+        content: '';
+        position: absolute;
+        top: .9rem;
+        right: 4.1rem;
+        width: 0;
+        height: 0;
+        border-top: 1.6rem solid transparent;
+        border-bottom: 1.6rem solid transparent;
+        border-left: 2rem solid $white;
+        transition: all .22s ease;
+      }
+	}
+
+    &__back {
+      position: relative;
+	  display: flex;
+	  align-items: center;
+      height: 5rem;
+	  padding-left: 5rem;
+      border-radius: 50%;
+      border: .1rem solid transparent;
+      transform: scale(1, 1);
+      transition: all .4s ease;
+
+      &:hover {
+        transform: scale(1.1, 1.1);
+
+        &:after {
+          animation: arrowBack1 .6s infinite ease;
+        }
+
+        &:before {
+          animation: arrowBack2 .6s infinite ease;
+        }
+      }
+
+      &:after {
+        opacity: 1;
+        content: '';
+        position: absolute;
+        top: .9rem;
+        left: 1.1rem;
+        width: 0;
+        height: 0;
+        border-top: 1.6rem solid transparent;
+        border-bottom: 1.6rem solid transparent;
+        border-right: 2rem solid $white;
+        transition: all .22s ease;
+      }
+
+      &:before {
+        opacity: 0;
+        content: '';
+        position: absolute;
+        top: .9rem;
+        left: 4.1rem;
+        width: 0;
+        height: 0;
+        border-top: 1.6rem solid transparent;
+        border-bottom: 1.6rem solid transparent;
+        border-right: 2rem solid $white;
+        transition: all .22s ease;
+      }
+    }
+
+	&__label {
+      width: max-content;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bold;
+	  line-height: 2rem;
 	}
   }
 
+  @keyframes arrowBack1 {
+    0% {
+      transform: translateX(0) scale(1, 1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateX(-3rem) scale(1.4, 1.4);
+	  opacity: 0;
+    }
+  }
+
+  @keyframes arrowBack2 {
+    0% {
+      transform: translateX(0) scale(.6, .6);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(-3rem) scale(1, 1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes arrowNext1 {
+    0% {
+      transform: translateX(0) scale(1, 1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateX(3rem) scale(1.4, 1.4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes arrowNext2 {
+    0% {
+      transform: translateX(0) scale(.6, .6);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(3rem) scale(1, 1);
+      opacity: 1;
+    }
+  }
 }
 </style>

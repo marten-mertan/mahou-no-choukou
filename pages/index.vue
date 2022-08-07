@@ -14,7 +14,7 @@ export default {
 	name: 'Index',
 	data: () => {
 		return {
-			GRID_INITIAL_COUNT: 139,
+			GRID_INITIAL_COUNT: 140,
 			GRID_ADD_COUNT: 20,
 			levelGrid: []
 		}

@@ -3,20 +3,21 @@
 		<div class="level-selection__title">{{title}}</div>
 
 		<div class="level-selection-grid">
-			<div v-for="(item, index) in items" :key="'level-selection-grid-item-'+index" class="level-selection-grid-item">
-				<NuxtLink :to="item.link" class="level-selection-grid-item-link">
-					{{item.index}}
-				</NuxtLink>
-			</div>
-			<div class="level-selection-grid-item">
-				<div
-					class="level-selection-grid-item-more"
-					@click="addMoreItems"
-				>
-					+
+			<TransitionGroup name="list" appear>
+				<div v-for="(item, index) in items" :key="'level-selection-grid-item-'+index" class="level-selection-grid-item">
+					<NuxtLink v-if="index !== items.length - 1" :to="item.link" class="level-selection-grid-item-link">
+						{{item.index}}
+					</NuxtLink>
+					<div v-else
+						class="level-selection-grid-item-more"
+						@click="addMoreItems"
+					>
+						+
+					</div>
 				</div>
-			</div>
+			</TransitionGroup>
 		</div>
+
 	</div>
 </template>
 
@@ -104,5 +105,16 @@ export default {
       }
     }
   }
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all .8s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition-delay: 0.25s;
 }
 </style>
