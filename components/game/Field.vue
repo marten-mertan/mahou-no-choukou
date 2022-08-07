@@ -63,7 +63,7 @@ export default {
 
   &.complete {
 	.field-inner {
-	  overflow: hidden;
+      animation: fieldOverflow 1s .3s infinite;
 
       &:after {
         transform: translateY(calc(100% + 2rem));
@@ -97,7 +97,7 @@ export default {
       background: url('/img/light.png') 50% 50% no-repeat;
       background-size: cover;
       transform: translateY(calc(-100% - 2rem));
-      transition: all .8s ease-out .3s;
+      transition: all .8s ease-out .4s;
     }
   }
 
@@ -143,6 +143,12 @@ export default {
 
     100% {
       transform: scale(1);
+    }
+  }
+
+  @keyframes fieldOverflow {
+    0%, 100% {
+      overflow: hidden;
     }
   }
 }
