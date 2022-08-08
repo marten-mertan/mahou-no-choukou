@@ -2,7 +2,7 @@
 	<div>
 		<NuxtLayout>
 			<NuxtLoading />
-			<NuxtPage/>
+			<NuxtPage :pageKey="$route.fullPath"/>
 		</NuxtLayout>
 	</div>
 </template>

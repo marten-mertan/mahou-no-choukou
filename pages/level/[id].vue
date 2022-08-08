@@ -1,4 +1,4 @@
-<template>
+<template :key="2">
 	<div class="level container">
 		<div class="level-arrow complete">
 			<NuxtLink class="level-arrow__back" to="/" >
@@ -19,12 +19,15 @@
 	</div>
 </template>
 
+<script setup>
+definePageMeta({
+	key: route => route.fullPath,
+})
+</script>
+
 <script>
 export default {
 	name: 'Level',
-	pageKey() {
-		return `level-page-${this.$route.params.id}`
-	},
 	data: () => {
 		return {
 			game: {

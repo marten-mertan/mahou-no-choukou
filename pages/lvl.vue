@@ -1,7 +1,8 @@
-<template :key="1">
+<template>
 	<div class="container">
+		<div class="Hello">Hello</div>
 		<GameLevelSelection
-			key="GameLevelSelection"
+			key="GameLevelSelection2"
 			title="Level selection"
 			:items="levelGrid"
 			@addMoreItems="addMoreItems"
@@ -9,15 +10,9 @@
 	</div>
 </template>
 
-<script setup>
-definePageMeta({
-	key: route => route.fullPath,
-})
-</script>
-
 <script>
 export default {
-	name: 'Index',
+	name: 'IndexLevel',
 	data: () => {
 		return {
 			GRID_INITIAL_COUNT: 140,

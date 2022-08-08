@@ -7,6 +7,7 @@
 </template>
 
 <script>
+//window.location.href = '/mahou-no-choukou/#!' + window.location.pathname.replace('/mahou-no-choukou', '');
 export default {
 	props: ['error'],
 	layout: 'error'
