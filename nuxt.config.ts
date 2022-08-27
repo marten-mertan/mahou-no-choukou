@@ -64,13 +64,16 @@ export default defineNuxtConfig({
     ],
 
     /**
-     * Миксины и переменные доступны во всех компонентам и во всех scss файлах
+     * Миксины и переменные доступны во всех компонентах и во всех scss файлах
      */
     vite: {
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: '@import "@/assets/scss/shared/_variables.scss"; @import "@/assets/scss/shared/_mixins.scss";',
+                    additionalData: [
+                        '@import "@/assets/scss/shared/_variables.scss";',
+                        '@import "@/assets/scss/shared/_mixins.scss";',
+                    ].join(''),
                 },
             },
         },
